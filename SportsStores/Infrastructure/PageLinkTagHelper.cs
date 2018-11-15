@@ -6,9 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
-using SportsStores.Models.ViewModels;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using SportsStores.Models.ViewModels;
 
 namespace SportsStores.Infrastructure
 {

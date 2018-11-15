@@ -25,7 +25,7 @@ namespace SportsStores
             options.UseSqlServer(
                 Configuration["Data:SportStoresProducts:ConnectionString"]));
             //services.AddTransient<IProductRepository, FakeProductRespository>();
-            services.AddTransient<IProductRepository, EFProductRespository>();
+            services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddMvc();
         }
 
