@@ -14,18 +14,18 @@ namespace SportsStores
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration) =>
-            Configuration = configuration;
+        //public Startup(IConfiguration configuration) =>
+        //    Configuration = configuration;
 
-        public IConfiguration Configuration { get; }
+        //public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(
-                Configuration["Data:SportStoresProducts:ConnectionString"]));
-            //services.AddTransient<IProductRepository, FakeProductRespository>();
-            services.AddTransient<IProductRepository, EFProductRepository>();
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //options.UseSqlServer(
+            //    Configuration["Data:SportStoresProducts:ConnectionString"]));
+            services.AddTransient<IProductRepository, FakeProductRepository>();
+            //services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddMvc();
         }
 
@@ -43,10 +43,10 @@ namespace SportsStores
 
                     routes.MapRoute(
                         name: "default",
-                        template: "{controller=Product}/{action=List}/{id}");
+                        template: "{controller=Product}/{action=List}/{id?}");
             
             });
-            SeedData.EnsurePopulated(app);
+            //SeedData.EnsurePopulated(app);
         }
     }
 }
