@@ -8,17 +8,19 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace SportsStores.Models
 {
-    public class ApplicationDbContext : DbContext { 
-        
+    public class ApplicationDbContext : DbContext
+    {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options) { }
+            : base(options)
+        {
+        }
 
         public DbSet<Product> Products { get; set; }
     }
-    public class ApplicationDbContextFactory
-           : IDesignTimeDbContextFactory<ApplicationDbContext>
-    {
 
+    public class ApplicationDbContextFactory
+        : IDesignTimeDbContextFactory<ApplicationDbContext>
+    {
         public ApplicationDbContext CreateDbContext(string[] args) =>
             Program.BuildWebHost(args).Services
                 .GetRequiredService<ApplicationDbContext>();

@@ -5,12 +5,15 @@ using System.Threading.Tasks;
 
 namespace SportsStores.Models
 {
-    public class EFProductRepository : IProductRepository {
+    public class EFProductRepository : IProductRepository
+    {
         private ApplicationDbContext context;
-        public EFProductRepository(ApplicationDbContext ctx) {
+
+        public EFProductRepository(ApplicationDbContext ctx)
+        {
             context = ctx;
         }
+
         public IQueryable<Product> Products => context.Products;
-    
     }
 }

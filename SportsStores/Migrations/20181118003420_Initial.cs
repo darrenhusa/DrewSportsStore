@@ -14,16 +14,14 @@ namespace SportsStores.Migrations
                 columns: table => new
                 {
                     ProductID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy",
+                            SqlServerValueGenerationStrategy.IdentityColumn),
                     Category = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Products", x => x.ProductID);
-                });
+                constraints: table => { table.PrimaryKey("PK_Products", x => x.ProductID); });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
